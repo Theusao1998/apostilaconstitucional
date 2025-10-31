@@ -64,3 +64,26 @@
     <script type="module" src="script.js"></script>
 </body>
 </html>
+<script>
+document.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section[id]");
+  let scrollY = window.scrollY + 150; // ajuste de margem
+
+  sections.forEach(sec => {
+    const link = document.querySelector(`a[href="#${sec.id}"]`);
+    if (!link) return;
+    if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
+</script>
+
+<style>
+#toc a.active {
+  color: #2563eb; /* azul */
+  font-weight: 600;
+}
+</style>
