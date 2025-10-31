@@ -40,7 +40,55 @@
                     </ul>
                 </nav>
             </aside>
+            <!-- Botão de rolagem -->
+<button id="scrollTopBtn" title="Voltar ao topo">
+  ↑
+</button>
 
+<script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Mostrar botão quando a rolagem passar de 400px
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.style.display = "flex";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  });
+
+  // Voltar ao topo com rolagem suave
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<style>
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+  }
+
+  #scrollTopBtn:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.1);
+  }
+</style>
             <!-- Main Content -->
             <main class="lg:w-3/4 xl:w-4/5">
                 <div class="bg-white p-8 md:p-10 rounded-lg shadow-sm border border-gray-200 prose max-w-none">
