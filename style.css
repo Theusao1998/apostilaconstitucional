@@ -154,3 +154,37 @@ h1, h2, h3, h4, h5, h6 {
 .prose strong {
     color: var(--text-color);
 }
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 9999;
+}
+
+#scrollTopBtn:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
